@@ -73,6 +73,7 @@ int main()
 */
 
 // demo of a reference to a pointer
+/* 
 #include<iostream>
 int main()
 {
@@ -81,5 +82,17 @@ int main()
     int *&r = p;
     *r = 50;
     std::cout << i << std::endl;
+    return 0;
+}
+*/
+
+#include<iostream>
+int main()
+{
+    int i = 5;
+    int &r1 = i;
+    const int &r2 = i;
+    r1 = 10;
+    std::cout << r2 << std::endl;
     return 0;
 }
