@@ -1,0 +1,23 @@
+{
+    "tasks": [
+      {
+        "label": "Build with Clang",
+        "type": "shell",
+        "command": "clang++",
+        "args": [
+            "-std=c++11",
+            "-stdlib=libc++",
+            "${file}",
+            "-o",
+            "${fileDirname}/${fileBasenameNoExtension}",
+            "--debug"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        }
+    }
+
+    ],
+    "version": "2.0.0"
+}
