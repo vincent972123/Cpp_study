@@ -329,6 +329,24 @@ int main()
 
 
 // vector opration
+/* 
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+int main()
+{
+    //vector<int> v{1,2,3,4,5,6,7,8,9};
+    vector<string> v{10};
+    for(auto &i : v)
+        i += i;
+    for(auto i : v)
+        cout << i << " " << endl;
+    return 0;
+}
+*/
+
+// statistics of the number of each section
 
 #include<iostream>
 #include<string>
@@ -336,10 +354,28 @@ int main()
 using namespace std;
 int main()
 {
-    vector<int> v{1,2,3,4,5,6,7,8,9};
-    for(auto &i : v)
-        i *= i;
-    for(auto i : v)
-        cout << i << " " << endl;
-    return 0;
+    vector<int> scores(11,0);
+    string::size_type cont;
+    int score;
+    cout << "please enter the score(1-100): " << endl;
+    while(cin >> score){
+        if(score <= 100 && score >= 0){
+            cont = score/10;
+            scores[cont]++;
+        }
+        else{
+            cout << "error score" << endl;
+            return -1;
+        }
+    }
+    int i = 0;
+    int n = 9;
+    for(auto s : scores){
+        if(i == 100)
+            cout << i << ": " << s << endl;
+        else    
+            cout << i << "-" << n << ": " << s << endl;
+        i = i + 10;
+        n = n + 10; 
+    }
 }
